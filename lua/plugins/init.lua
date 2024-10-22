@@ -7,9 +7,19 @@ return {
     end
   },
   {
+    "numToStr/Comment.nvim",
+    opts = {
+      opleader = {
+        line = "<leader>/"
+      },
+    }
+  },
+  { "lewis6991/gitsigns.nvim", opts = {} },
+  {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {},
+    opts = {
+    }
   },
   { "uga-rosa/ccc.nvim" },
   {
@@ -24,25 +34,22 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
-    ---@module "ibl"
-    ---@type ibl.config
-    -- opts = {},
+    -- opts = {}, -- uncomment to enable
   },
   {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.8",
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
-    'windwp/nvim-autopairs',
+    "windwp/nvim-autopairs",
     event = "InsertEnter",
     config = true,
   },
-  { "terrortylor/nvim-comment" },
-  { "filipdutescu/renamer.nvim", dependencies = { 'nvim-lua/plenary.nvim' }, opts = {} },
+  { "filipdutescu/renamer.nvim",    dependencies = { "nvim-lua/plenary.nvim" }, opts = {} },
   {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' }
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" }
   },
   { "niuiic/multiple-session.nvim", dependencies = { "niuiic/core.nvim" } },
   {
@@ -81,24 +88,24 @@ return {
     },
   },
   {
-    'romgrk/barbar.nvim',
+    "romgrk/barbar.nvim",
     dependencies = {
-      'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
-      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+      "lewis6991/gitsigns.nvim",     -- OPTIONAL: for git status
+      "nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
     },
     init = function() vim.g.barbar_auto_setup = false end,
     opts = {
       auto_hide = 1
     },
   },
-  { 'akinsho/toggleterm.nvim', version = "*",      config = true },
+  { "akinsho/toggleterm.nvim", version = "*", config = true },
   {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
   },
   {
-    'stevearc/conform.nvim',
+    "stevearc/conform.nvim",
     opts = {},
   },
   {
@@ -110,5 +117,17 @@ return {
   },
 
   -- Themes
-  { "catppuccin/nvim",         name = "catppuccin" }
+  { "catppuccin/nvim",                 name = "catppuccin" },
+  { "yorickpeterse/happy_hacking.vim", name = "happy hacking" },
+  { "EdenEast/nightfox.nvim",          name = "Nightfox" },
+  {
+    "baliestri/aura-theme",
+    lazy = false,
+    priority = 1000,
+    config = function(plugin)
+      vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+      vim.cmd([[colorscheme aura-dark]])
+    end,
+    name = "Aura"
+  }
 }

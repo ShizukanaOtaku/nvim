@@ -1,7 +1,20 @@
 local lspconfig = require("lspconfig")
-lspconfig.lua_ls.setup {}
-lspconfig.rust_analyzer.setup {}
-lspconfig.clangd.setup {}
-lspconfig.pyright.setup {}
-lspconfig.jdtls.setup {}
-lspconfig.cssls.setup {}
+local servers = {
+  "tailwindcss",
+  "ts_ls",
+  "jsonls",
+  "eslint",
+  "lua_ls",
+  "rust_analyzer",
+  "clangd",
+  "pyright",
+  "jdtls",
+  "cssls",
+  "biome"
+}
+for _, lsp in pairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilites = capabilities,
+  }
+end

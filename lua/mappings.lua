@@ -26,6 +26,7 @@ map("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
 map("n", "<leader>fb", builtin.buffers, { desc = "Find in buffers" })
 map("n", "<leader>fz", "<CMD>Telescope current_buffer_fuzzy_find<CR>", { desc = "Fuzzy search in current buffer" })
 map("n", "<leader>st", "<CMD>Telescope colorscheme<CR>", { desc = "Switch themes" })
+map("n", "<leader>ft", "<CMD>TodoTelescope keywords=TODO,FIX<CR>", { desc = "Show all todos in the project" })
 
 -- LSP
 map("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
@@ -36,8 +37,6 @@ map("n", "gi", "<CMD>vim.lsp.buf.implementation<CR>", { desc = "Go to implementa
 map("n", "<leader>sh", vim.lsp.buf.signature_help, { desc = "Show signature help" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 map("n", "<leader>ra", "<CMD>lua require('renamer').rename()<CR>", { desc = "Rename" })
-map("n", "<leader>/", "<CMD>CommentToggle<CR>", { desc = "Toggle comment" })
-map("v", "<leader>/", "<CMD>CommentToggle<CR>", { desc = "Toggle comment" })
 
 -- Terminal
 map("n", "<leader>th", "<CMD>ToggleTerm direction=horizontal<CR>", { desc = "Horizontal terminal" })
