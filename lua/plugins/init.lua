@@ -2,9 +2,9 @@ return {
   {
     "startup-nvim/startup.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
-    config = function()
-      require "startup".setup()
-    end
+    opts = {
+      theme = "gigachad"
+    }
   },
   {
     "numToStr/Comment.nvim",
@@ -21,9 +21,6 @@ return {
     opts = {
       lsp = {
         enabled = true,
-        on_attach = function(client, bufnr)
-          -- the same on_attach function as for your other lsp's
-        end,
         actions = true,
         completion = true,
         hover = true,
