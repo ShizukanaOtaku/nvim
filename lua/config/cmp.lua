@@ -1,5 +1,12 @@
 local cmp = require("cmp")
 
+-- If you want insert `(` after select function or method item
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -22,10 +29,11 @@ cmp.setup({
     ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
   sources = cmp.config.sources({
+    { name = "codeium" },
     { name = "path" },
     { name = "nvim_lsp" },
     -- { name = "vsnip" }, -- For vsnip users.
-    -- { name = "luasnip" }, -- For luasnip users.
+    { name = "luasnip" }, -- For luasnip users.
     -- { name = "ultisnips" }, -- For ultisnips users.
     -- { name = "snippy" }, -- For snippy users.
   }, {
