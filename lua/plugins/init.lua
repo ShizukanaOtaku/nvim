@@ -3,7 +3,7 @@ return {
     "startup-nvim/startup.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
     opts = {
-      theme = "gigachad"
+      theme = "anime"
     }
   },
   {
@@ -13,6 +13,12 @@ return {
         line = "<leader>/"
       },
     }
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
   },
   { "lewis6991/gitsigns.nvim", opts = {} },
   {
