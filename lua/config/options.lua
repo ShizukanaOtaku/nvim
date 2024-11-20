@@ -9,4 +9,3 @@ opt.wrap = false
 opt.termguicolors = true
 opt.number = true
 opt.relativenumber = true
-opt.termguicolors = true

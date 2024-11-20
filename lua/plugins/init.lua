@@ -144,7 +144,6 @@ return {
       auto_hide = 1
     },
   },
-  { "akinsho/toggleterm.nvim", version = "*", config = true },
   {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
