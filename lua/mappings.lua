@@ -36,6 +36,7 @@ map("n", "]", "<CMD>vim.diagnostic.goto_next()<CR>", { desc = "Go to next diagno
 map("n", "gi", "<CMD>vim.lsp.buf.implementation<CR>", { desc = "Go to implementation" })
 map("n", "<leader>sh", vim.lsp.buf.signature_help, { desc = "Show signature help" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
+map("n", "<leader>dc", vim.lsp.buf.hover, { desc = "Show documentation" });
 map("n", "<leader>ra", "<CMD>lua require('renamer').rename()<CR>", { desc = "Rename" })
 
 -- Window switching

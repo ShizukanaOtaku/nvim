@@ -1,6 +1,16 @@
 local cmp = require("cmp")
 
--- If you want insert `(` after select function or method item
+vim.keymap.set('n', '<C-d>', function()
+  local entry = cmp.get_selected_entry()
+  if entry then
+    -- If a completion entry is selected, show its documentation
+    cmp.select_entry(entry)
+  else
+    -- Otherwise, fallback to LSP hover
+    vim.lsp.buf.hover()
+  end
+end, { desc = 'Show documentation window' })
+
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on(
   'confirm_done',
@@ -10,11 +20,7 @@ cmp.event:on(
 cmp.setup({
   snippet = {
     expand = function(args)
-      -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-      -- require("snippy").expand_snippet(args.body) -- For `snippy` users.
-      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-      -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+      require("luasnip").lsp_expand(args.body)
     end,
   },
   window = {
@@ -26,16 +32,14 @@ cmp.setup({
     ["<C-c>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.abort(),
-    ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
     { name = "codeium" },
     { name = "path" },
     { name = "nvim_lsp" },
-    -- { name = "vsnip" }, -- For vsnip users.
-    { name = "luasnip" }, -- For luasnip users.
-    -- { name = "ultisnips" }, -- For ultisnips users.
-    -- { name = "snippy" }, -- For snippy users.
+    { name = 'nvim_lsp_signature_help' },
+    { name = "luasnip" },
   }, {
     { name = "buffer" },
   })

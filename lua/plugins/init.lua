@@ -165,6 +165,7 @@ return {
   { "catppuccin/nvim",                 name = "catppuccin" },
   { "yorickpeterse/happy_hacking.vim", name = "happy hacking" },
   { "EdenEast/nightfox.nvim",          name = "Nightfox" },
+  { "rebelot/kanagawa.nvim",           name = "Kanagawa" },
   {
     "baliestri/aura-theme",
     lazy = false,
