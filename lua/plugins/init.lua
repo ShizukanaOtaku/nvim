@@ -92,12 +92,12 @@ return {
     event = "InsertEnter",
     config = true,
   },
-  { "filipdutescu/renamer.nvim",    dependencies = { "nvim-lua/plenary.nvim" }, opts = {} },
+  { "filipdutescu/renamer.nvim",    dependencies = { "nvim-lua/plenary.nvim" },                    opts = {} },
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" }
   },
-  { "niuiic/multiple-session.nvim", dependencies = { "niuiic/core.nvim" } },
+  { "niuiic/multiple-session.nvim", dependencies = { "niuiic/core.nvim", "niuiic/dap-utils.nvim" } },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {

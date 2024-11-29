@@ -14,7 +14,7 @@ require("todo-comments").setup()
 require("lualine").setup {
   options = { theme = "ayu_mirage" }
 }
-require("multiple-session").setup()
+require("config.session-restore")
 
 vim.notify = require("notify")
 
