@@ -4,6 +4,7 @@ local wk = require("which-key")
 map("n", ";", ":", { desc = "Enter CMD mode" })
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear highlights" })
 
+-- Buffer and file tree
 map("n", "<leader>e", vim.cmd.Neotree, { desc = "File tree" })
 map("n", "<leader>l", vim.cmd.Lazy, { desc = "Open Lazy" })
 map("n", "<leader>x", vim.cmd.BufferClose, { desc = "Close buffer" })
@@ -18,6 +19,9 @@ wk.add({
   { "<leader>sf", function() require("nvim-silicon").file() end,  desc = "Save code screenshot as file" },
   { "<leader>ss", function() require("nvim-silicon").shoot() end, desc = "Create code screenshot" },
 })
+
+-- Persistence
+map("n", "<leader>rs", function() require("persistence").load() end)
 
 -- Telescope
 local builtin = require("telescope.builtin")

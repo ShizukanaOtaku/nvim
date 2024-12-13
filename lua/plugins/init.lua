@@ -62,6 +62,12 @@ return {
     opts = {}
   },
   {
+    "folke/persistence.nvim",
+    event = "BufReadPre",
+    opts = {
+    }
+  },
+  {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {

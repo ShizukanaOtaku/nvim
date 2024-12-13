@@ -29,4 +29,5 @@ ccc.setup({
 })
 
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.opt.foldmethod = 'expr'
+vim.opt.foldmethod = 'indent'
+vim.opt.colorcolumn = '90'
