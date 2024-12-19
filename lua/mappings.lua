@@ -44,10 +44,14 @@ map("n", "<leader>dc", vim.lsp.buf.hover, { desc = "Show documentation" });
 map("n", "<leader>ra", "<CMD>lua require('renamer').rename()<CR>", { desc = "Rename" })
 
 -- Window switching
-map("n", "<C-h>", "<C-w>h", { desc = "Switch window left" })
-map("n", "<C-l>", "<C-w>l", { desc = "Switch window right" })
-map("n", "<C-j>", "<C-w>j", { desc = "Switch window down" })
-map("n", "<C-k>", "<C-w>k", { desc = "Switch window up" })
+-- map("n", "<C-h>", "<C-w>h", { desc = "Switch window left" })
+-- map("n", "<C-l>", "<C-w>l", { desc = "Switch window right" })
+-- map("n", "<C-j>", "<C-w>j", { desc = "Switch window down" })
+-- map("n", "<C-k>", "<C-w>k", { desc = "Switch window up" })
+map("n", "<C-h>", "<CMD>ZellijNavigateLeft<CR>", { desc = "Switch window left" })
+map("n", "<C-l>", "<CMD>ZellijNavigateRight<CR>", { desc = "Switch window right" })
+map("n", "<C-j>", "<CMD>ZellijNavigateDown<CR>", { desc = "Switch window down" })
+map("n", "<C-k>", "<CMD>ZellijNavigateUp<CR>", { desc = "Switch window up" })
 
 -- Line numbering
 map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "Toggle line number" })
