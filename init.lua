@@ -4,7 +4,6 @@ require("mappings")
 -- require("config.indent-blankline")
 require("mason").setup()
 require("config.cmp")
-require("config.debugger")
 require("conform").setup {
   format_on_save = {
     timeout_ms = 500,

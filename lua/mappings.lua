@@ -23,6 +23,9 @@ wk.add({
 -- Persistence
 map("n", "<leader>rs", function() require("persistence").load() end)
 
+-- Undo tree
+map("n", "<leader>u", "<CMD>UndotreeToggle<CR>", { desc = "Toggle Undo Tree" })
+
 -- Telescope
 local builtin = require("telescope.builtin")
 map("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
@@ -44,12 +47,12 @@ map("n", "<leader>dc", vim.lsp.buf.hover, { desc = "Show documentation" });
 map("n", "<leader>ra", "<CMD>lua require('renamer').rename()<CR>", { desc = "Rename" })
 
 -- DAP
-map("n", "<leader>db", function() require("dap").toggle_breakpoint() end)
-map("n", "<F5>", function() require("dap").continue() end)
-map("n", "<F10>", function() require("dap").step_over() end)
-map("n", "<F11>", function() require("dap").step_into() end)
-map("n", "<F12>", function() require("dap").step_out() end)
-map("n", "<leader>du", function() require("dapui").toggle() end)
+-- map("n", "<leader>db", function() require("dap").toggle_breakpoint() end)
+-- map("n", "<F5>", function() require("dap").continue() end)
+-- map("n", "<F10>", function() require("dap").step_over() end)
+-- map("n", "<F11>", function() require("dap").step_into() end)
+-- map("n", "<F12>", function() require("dap").step_out() end)
+-- map("n", "<leader>du", function() require("dapui").toggle() end)
 
 -- Window switching
 map("n", "<C-h>", "<C-w>h", { desc = "Switch window left" })
