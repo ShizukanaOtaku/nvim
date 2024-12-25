@@ -4,6 +4,7 @@ require("mappings")
 -- require("config.indent-blankline")
 require("mason").setup()
 require("config.cmp")
+require("config.debugger")
 require("conform").setup {
   format_on_save = {
     timeout_ms = 500,
@@ -15,12 +16,7 @@ require("lualine").setup {
   options = { theme = "ayu_mirage" }
 }
 
-vim.notify = require("notify")
-
-require("config/options")
-
 local ccc = require("ccc")
-
 ccc.setup({
   highlighter = {
     auto_enable = true,
@@ -28,7 +24,10 @@ ccc.setup({
   },
 })
 
+vim.notify = require("notify")
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldmethod = 'indent'
 vim.opt.colorcolumn = '90'
 vim.opt.undofile = true
+
+require("config/options")
