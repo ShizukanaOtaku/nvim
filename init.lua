@@ -4,6 +4,7 @@ require("mappings")
 -- require("config.indent-blankline")
 require("mason").setup()
 require("config.cmp")
+require("config.debugger")
 require("conform").setup {
   format_on_save = {
     timeout_ms = 500,
@@ -14,35 +15,6 @@ require("todo-comments").setup()
 require("lualine").setup {
   options = { theme = "ayu_mirage" }
 }
-
-require("dapui").setup()
-
-local dap = require('dap')
-
-dap.adapters.lldb = {
-  type = 'executable',
-  command = '/sbin/codelldb',
-  name = 'lldb'
-}
-
-dap.configurations.c = {
-  {
-    name = "Launch file",
-    type = "lldb",
-    request = "launch",
-    program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-    end,
-    cwd = '${workspaceFolder}',
-    stopOnEntry = false,
-    args = {}
-  }
-}
-
-dap.configurations.rust = dap.configurations.c
-vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint", linehl = "", numhl = "" })
-
-require("nvim-dap-virtual-text").setup()
 
 local ccc = require("ccc")
 ccc.setup({
