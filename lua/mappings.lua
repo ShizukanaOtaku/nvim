@@ -23,6 +23,9 @@ wk.add({
 -- Persistence
 map("n", "<leader>rs", function() require("persistence").load() end)
 
+-- Undo tree
+map("n", "<leader>u", "<CMD>UndotreeToggle<CR>", { desc = "Toggle Undo Tree" })
+
 -- Telescope
 local builtin = require("telescope.builtin")
 map("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
@@ -44,22 +47,23 @@ map("n", "<leader>dc", vim.lsp.buf.hover, { desc = "Show documentation" });
 map("n", "<leader>ra", "<CMD>lua require('renamer').rename()<CR>", { desc = "Rename" })
 
 -- DAP
-map("n", "<leader>db", function() require("dap").toggle_breakpoint() end)
-map("n", "<F5>", function() require("dap").continue() end)
-map("n", "<F10>", function() require("dap").step_over() end)
-map("n", "<F11>", function() require("dap").step_into() end)
-map("n", "<F12>", function() require("dap").step_out() end)
-map("n", "<leader>du", function() require("dapui").toggle() end)
+-- map("n", "<leader>db", function() require("dap").toggle_breakpoint() end)
+-- map("n", "<F5>", function() require("dap").continue() end)
+-- map("n", "<F10>", function() require("dap").step_over() end)
+-- map("n", "<F11>", function() require("dap").step_into() end)
+-- map("n", "<F12>", function() require("dap").step_out() end)
+-- map("n", "<leader>du", function() require("dapui").toggle() end)
 
 -- Window switching
-map("n", "<C-h>", "<C-w>h", { desc = "Switch window left" })
-map("n", "<C-l>", "<C-w>l", { desc = "Switch window right" })
-map("n", "<C-j>", "<C-w>j", { desc = "Switch window down" })
-map("n", "<C-k>", "<C-w>k", { desc = "Switch window up" })
-map("n", "<C-h>", "<CMD>ZellijNavigateLeft<CR>", { desc = "Switch window left" })
-map("n", "<C-l>", "<CMD>ZellijNavigateRight<CR>", { desc = "Switch window right" })
-map("n", "<C-j>", "<CMD>ZellijNavigateDown<CR>", { desc = "Switch window down" })
-map("n", "<C-k>", "<CMD>ZellijNavigateUp<CR>", { desc = "Switch window up" })
+-- Unnecesary, since the pluging handles it
+-- map("n", "<C-h>", "<C-w>h", { noremap = true, silent = true, desc = "Switch window left" })
+-- map("n", "<C-l>", "<C-w>l", { noremap = true, silent = true, desc = "Switch window right" })
+-- map("n", "<C-j>", "<C-w>j", { noremap = true, silent = true, desc = "Switch window down" })
+-- map("n", "<C-k>", "<C-w>k", { noremap = true, silent = true, desc = "Switch window up" })
+-- map("n", "<C-h>", "<CMD>ZellijNavigateLeft<CR>", { desc = "Switch window left" })
+-- map("n", "<C-l>", "<CMD>ZellijNavigateRight<CR>", { desc = "Switch window right" })
+-- map("n", "<C-j>", "<CMD>ZellijNavigateDown<CR>", { desc = "Switch window down" })
+-- map("n", "<C-k>", "<CMD>ZellijNavigateUp<CR>", { desc = "Switch window up" })
 
 -- Line numbering
 map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "Toggle line number" })
