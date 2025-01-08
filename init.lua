@@ -24,9 +24,5 @@ ccc.setup({
 })
 
 vim.notify = require("notify")
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.opt.foldmethod = 'indent'
-vim.opt.colorcolumn = '90'
-vim.opt.undofile = true
 
 require("config/options")
