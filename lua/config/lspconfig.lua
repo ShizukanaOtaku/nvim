@@ -1,20 +1,5 @@
-local lspconfig = require("lspconfig")
-local servers = {
-  "tailwindcss",
-  "ts_ls",
-  "jsonls",
-  "eslint",
-  "lua_ls",
-  "rust_analyzer",
-  "clangd",
-  "pyright",
-  "jdtls",
-  "cssls",
-  "biome"
+require("mason-lspconfig").setup_handlers {
+  function (server_name)
+    require("lspconfig")[server_name].setup {}
+  end,
 }
-for _, lsp in pairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilites = capabilities,
-  }
-end

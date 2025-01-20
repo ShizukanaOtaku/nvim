@@ -1,8 +1,8 @@
 require("config.lazy")
-require("config.lspconfig")
 require("mappings")
--- require("config.indent-blankline")
 require("mason").setup()
+require("mason-lspconfig").setup()
+require("config.lspconfig")
 require("config.cmp")
 require("conform").setup {
   format_on_save = {
