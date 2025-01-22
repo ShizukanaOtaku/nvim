@@ -1,4 +1,5 @@
 require("config.lazy")
+
 require("mappings")
 require("mason").setup()
 require("mason-lspconfig").setup()
@@ -25,4 +26,5 @@ ccc.setup({
 
 vim.notify = require("notify")
 
+require("pywal16").setup()
 require("config/options")
