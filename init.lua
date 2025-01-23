@@ -25,6 +25,9 @@ ccc.setup({
 })
 
 vim.notify = require("notify")
+require("notify").setup({
+  background_colour = "#000000",
+})
 
 require("pywal16").setup()
 vim.cmd('colorscheme pywal16')
