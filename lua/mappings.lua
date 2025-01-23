@@ -21,8 +21,8 @@ wk.add({
   { "<leader>ss", function() require("nvim-silicon").shoot() end, desc = "Create code screenshot" },
 })
 
--- Persistence
-map("n", "<leader>rs", function() require("persistence").load() end)
+-- Pywal
+map("n", "<leader>rs", "<CMD>colorscheme pywal16<CR>", { desc = "Reload pywal colorscheme" })
 
 -- Undo tree
 map("n", "<leader>u", "<CMD>UndotreeToggle<CR>", { desc = "Toggle Undo Tree" })

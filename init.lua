@@ -29,4 +29,10 @@ vim.notify = require("notify")
 require("pywal16").setup()
 vim.cmd('colorscheme pywal16')
 
+require('lualine').setup {
+  options = {
+    theme = 'pywal16-nvim',
+  },
+}
+
 require("config/options")
