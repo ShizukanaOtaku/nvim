@@ -12,6 +12,18 @@ map("n", "<S-tab>", vim.cmd.bnext, { desc = "Previous buffer" })
 map("n", "<leader>l", vim.cmd.Lazy, { desc = "Open Lazy" })
 map("n", "<leader>m", vim.cmd.Mason, { desc = "Open Mason" })
 
+-- Luasnip
+local ls = require("luasnip")
+
+map({ "i", "s" }, "<C-L>", function() ls.jump(1) end, { silent = true })
+map({ "i", "s" }, "<C-J>", function() ls.jump(-1) end, { silent = true })
+
+map({ "i", "s" }, "<C-E>", function()
+  if ls.choice_active() then
+    ls.change_choice(1)
+  end
+end, { silent = true })
+
 -- Silicon
 wk.add({
   mode = { "v" },
@@ -46,25 +58,6 @@ map("n", "<leader>sh", vim.lsp.buf.signature_help, { desc = "Show signature help
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 map("n", "<leader>dc", vim.lsp.buf.hover, { desc = "Show documentation" });
 map("n", "<leader>ra", "<CMD>lua require('renamer').rename()<CR>", { desc = "Rename" })
-
--- DAP
--- map("n", "<leader>db", function() require("dap").toggle_breakpoint() end)
--- map("n", "<F5>", function() require("dap").continue() end)
--- map("n", "<F10>", function() require("dap").step_over() end)
--- map("n", "<F11>", function() require("dap").step_into() end)
--- map("n", "<F12>", function() require("dap").step_out() end)
--- map("n", "<leader>du", function() require("dapui").toggle() end)
-
--- Window switching
--- Unnecesary, since the pluging handles it
--- map("n", "<C-h>", "<C-w>h", { noremap = true, silent = true, desc = "Switch window left" })
--- map("n", "<C-l>", "<C-w>l", { noremap = true, silent = true, desc = "Switch window right" })
--- map("n", "<C-j>", "<C-w>j", { noremap = true, silent = true, desc = "Switch window down" })
--- map("n", "<C-k>", "<C-w>k", { noremap = true, silent = true, desc = "Switch window up" })
--- map("n", "<C-h>", "<CMD>ZellijNavigateLeft<CR>", { desc = "Switch window left" })
--- map("n", "<C-l>", "<CMD>ZellijNavigateRight<CR>", { desc = "Switch window right" })
--- map("n", "<C-j>", "<CMD>ZellijNavigateDown<CR>", { desc = "Switch window down" })
--- map("n", "<C-k>", "<CMD>ZellijNavigateUp<CR>", { desc = "Switch window up" })
 
 -- Line numbering
 map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "Toggle line number" })
