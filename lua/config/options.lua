@@ -1,9 +1,9 @@
 local opt = vim.opt
 
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.softtabstop = 2
-opt.expandtab = true
+opt.tabstop = 8
+opt.shiftwidth = 8
+opt.softtabstop = 8
+opt.expandtab = false
 opt.smartindent = true
 opt.wrap = false
 opt.termguicolors = true
