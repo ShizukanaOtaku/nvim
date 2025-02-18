@@ -47,6 +47,7 @@ map("n", "<leader>fb", builtin.buffers, { desc = "Find in buffers" })
 map("n", "<leader>fz", "<CMD>Telescope current_buffer_fuzzy_find<CR>", { desc = "Fuzzy search in current buffer" })
 map("n", "<leader>st", "<CMD>Telescope colorscheme<CR>", { desc = "Switch themes" })
 map("n", "<leader>ft", "<CMD>TodoTelescope keywords=TODO,FIX<CR>", { desc = "Show all todos in the project" })
+map("n", "<leader>fn", "<CMD>TodoTelescope keywords=NOTE<CR>", { desc = "Show all notes in the project" })
 
 -- LSP
 map("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
