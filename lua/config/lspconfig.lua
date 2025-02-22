@@ -5,5 +5,5 @@ require("mason-lspconfig").setup_handlers {
 }
 
 require("lspconfig").clangd.setup{
-    cmd = { "clangd", "--compile-commands-dir=" .. vim.fn.getcwd() },
+    cmd = { "clangd", "--compile-commands-dir=" .. vim.fn.getcwd(), "--fallback-style=none" },
 }
