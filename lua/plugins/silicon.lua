@@ -4,7 +4,7 @@ return {
     cmd = "Silicon",
     config = function()
         require("nvim-silicon").setup({
-            theme = "Nord",
+            theme = "OneHalfDark",
             background = "#fff0",
             no_window_controls = true,
             shadow_color = "#fff0",
