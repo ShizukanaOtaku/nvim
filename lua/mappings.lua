@@ -35,7 +35,17 @@ wk.add({
 })
 
 -- Obsidian
-
+wk.add({
+    mode = { "n" },
+    { "<leader>o",  group = "Obsidian" },
+    { "<leader>oo", "<CMD>ObsidianOpen<CR>",        desc = "Open current note in Obsidian" },
+    { "<leader>on", "<CMD>ObsidianNew<CR>",         desc = "Create new note" },
+    { "<leader>oq", "<CMD>ObsidianQuickSwitch<CR>", desc = "Open note switcher" },
+    { "<leader>ow", "<CMD>ObsidianWorkspace<CR>",   desc = "Switch workspaces" },
+    { "<leader>or", "<CMD>ObsidianRename<CR>",      desc = "Rename current note" },
+    { "<leader>ot", "<CMD>ObsidianTOC<CR>",         desc = "Open Table of Contents" },
+    { "<leader>op", "<CMD>ObsidianPasteImg<CR>",    desc = "Paste an image" },
+})
 
 -- Pywal
 map("n", "<leader>rs", "<CMD>colorscheme pywal16<CR>", { desc = "Reload pywal colorscheme" })
@@ -47,6 +57,7 @@ map("n", "<leader>u", "<CMD>UndotreeToggle<CR>", { desc = "Toggle Undo Tree" })
 local builtin = require("telescope.builtin")
 wk.add({
     mode = { "n" },
+    { "<leader>f",  group = "Telescope" },
     { "<leader>ff", builtin.find_files,                             desc = "Find files" },
     { "<leader>fg", builtin.live_grep,                              desc = "Live grep" },
     { "<leader>fb", builtin.buffers,                                desc = "Find in buffers" },
