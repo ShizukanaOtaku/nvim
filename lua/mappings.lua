@@ -34,6 +34,9 @@ wk.add({
     { "<leader>ss", function() require("nvim-silicon").shoot() end, desc = "Create code screenshot" },
 })
 
+-- Obsidian
+
+
 -- Pywal
 map("n", "<leader>rs", "<CMD>colorscheme pywal16<CR>", { desc = "Reload pywal colorscheme" })
 
@@ -42,13 +45,16 @@ map("n", "<leader>u", "<CMD>UndotreeToggle<CR>", { desc = "Toggle Undo Tree" })
 
 -- Telescope
 local builtin = require("telescope.builtin")
-map("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
-map("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
-map("n", "<leader>fb", builtin.buffers, { desc = "Find in buffers" })
-map("n", "<leader>fz", "<CMD>Telescope current_buffer_fuzzy_find<CR>", { desc = "Fuzzy search in current buffer" })
-map("n", "<leader>st", "<CMD>Telescope colorscheme<CR>", { desc = "Switch themes" })
-map("n", "<leader>ft", "<CMD>TodoTelescope keywords=TODO,FIX<CR>", { desc = "Show all todos in the project" })
-map("n", "<leader>fn", "<CMD>TodoTelescope keywords=NOTE<CR>", { desc = "Show all notes in the project" })
+wk.add({
+    mode = { "n" },
+    { "<leader>ff", builtin.find_files,                             desc = "Find files" },
+    { "<leader>fg", builtin.live_grep,                              desc = "Live grep" },
+    { "<leader>fb", builtin.buffers,                                desc = "Find in buffers" },
+    { "<leader>fz", "<CMD>Telescope current_buffer_fuzzy_find<CR>", desc = "Fuzzy search in current buffer" },
+    { "<leader>st", "<CMD>Telescope colorscheme<CR>",               desc = "Switch themes" },
+    { "<leader>ft", "<CMD>TodoTelescope keywords=TODO,FIX<CR>",     desc = "Show all todos in the project" },
+    { "<leader>fn", "<CMD>TodoTelescope keywords=NOTE<CR>",         desc = "Show all notes in the project" },
+})
 
 -- LSP
 map("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
@@ -56,9 +62,8 @@ map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 map("n", "[", "<CMD>lua vim.diagnostic.goto_prev()<CR>", { desc = "Go to previous diagnostic" })
 map("n", "]", "<CMD>vim.diagnostic.goto_next()<CR>", { desc = "Go to next diagnostic" })
 map("n", "gi", "<CMD>vim.lsp.buf.implementation<CR>", { desc = "Go to implementation" })
-map("n", "<leader>sh", vim.lsp.buf.signature_help, { desc = "Show signature help" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
-map("n", "<leader>dc", vim.lsp.buf.hover, { desc = "Show documentation" });
+map("n", "<leader>d", vim.lsp.buf.hover, { desc = "Show documentation" });
 map("n", "<leader>ra", "<CMD>lua require('renamer').rename()<CR>", { desc = "Rename" })
 
 -- Line numbering
