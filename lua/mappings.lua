@@ -4,11 +4,12 @@ local wk = require("which-key")
 map("n", ";", ":", { desc = "Enter CMD mode" })
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear highlights" })
 
-map("n", "<leader>e", vim.cmd.Neotree, { desc = "File tree" })
-map("n", "<leader>x", vim.cmd.BufferClose, { desc = "Close buffer" })
-map("n", "<tab>", vim.cmd.bprevious, { desc = "Next buffer" })
-map("n", "<S-tab>", vim.cmd.bnext, { desc = "Previous buffer" })
+map("n", "<leader>e", "<CMD>Neotree<CR>", { desc = "File tree" })
+map("n", "<leader>x", vim.cmd.bd, { desc = "Close buffer" })
+map("n", "<tab>", vim.cmd.bnext, { desc = "Next buffer" })
+map("n", "<S-tab>", vim.cmd.bprevious, { desc = "Previous buffer" })
 
+-- Managers
 map("n", "<leader>l", vim.cmd.Lazy, { desc = "Open Lazy" })
 map("n", "<leader>m", vim.cmd.Mason, { desc = "Open Mason" })
 
