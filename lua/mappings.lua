@@ -19,18 +19,18 @@ map({ "i", "s" }, "<C-L>", function() ls.jump(1) end, { silent = true })
 map({ "i", "s" }, "<C-J>", function() ls.jump(-1) end, { silent = true })
 
 map({ "i", "s" }, "<C-E>", function()
-  if ls.choice_active() then
-    ls.change_choice(1)
-  end
+    if ls.choice_active() then
+        ls.change_choice(1)
+    end
 end, { silent = true })
 
 -- Silicon
 wk.add({
-  mode = { "v" },
-  { "<leader>s",  group = "Silicon" },
-  { "<leader>sc", function() require("nvim-silicon").clip() end,  desc = "Copy code screenshot to clipboard" },
-  { "<leader>sf", function() require("nvim-silicon").file() end,  desc = "Save code screenshot as file" },
-  { "<leader>ss", function() require("nvim-silicon").shoot() end, desc = "Create code screenshot" },
+    mode = { "v" },
+    { "<leader>s",  group = "Silicon" },
+    { "<leader>sc", function() require("nvim-silicon").clip() end,  desc = "Copy code screenshot to clipboard" },
+    { "<leader>sf", function() require("nvim-silicon").file() end,  desc = "Save code screenshot as file" },
+    { "<leader>ss", function() require("nvim-silicon").shoot() end, desc = "Create code screenshot" },
 })
 
 -- Pywal
@@ -61,5 +61,8 @@ map("n", "<leader>dc", vim.lsp.buf.hover, { desc = "Show documentation" });
 map("n", "<leader>ra", "<CMD>lua require('renamer').rename()<CR>", { desc = "Rename" })
 
 -- Line numbering
-map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "Toggle line number" })
-map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "Toggle relative number" })
+map("n", "<leader>n", "<CMD>set nu!<CR>", { desc = "Toggle line number" })
+map("n", "<leader>rn", "<CMD>set rnu!<CR>", { desc = "Toggle relative number" })
+
+-- Zen mode
+map("n", "<leader>z", "<CMD>ZenMode<CR>", { desc = "Toggle Zen mode" })
