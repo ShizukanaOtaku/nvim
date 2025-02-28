@@ -84,3 +84,6 @@ map("n", "<leader>rn", "<CMD>set rnu!<CR>", { desc = "Toggle relative number" })
 
 -- Zen mode
 map("n", "<leader>z", "<CMD>ZenMode<CR>", { desc = "Toggle Zen mode" })
+
+-- Context view
+map("n", "<leader>cx", "<CMD>ContextToggle<CR>", { desc = "Toggle context view" })
