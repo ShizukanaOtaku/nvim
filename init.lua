@@ -31,9 +31,9 @@ require("notify").setup({
 
 require("pywal16").setup()
 
-require('lualine').setup {
+require("lualine").setup {
     options = {
-        theme = 'pywal16-nvim',
+        theme = "pywal16-nvim",
     },
 }
 
@@ -49,3 +49,4 @@ require("telescope").setup({
 })
 
 require("config/options")
+require("config.restore-colorscheme")
