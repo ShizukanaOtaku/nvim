@@ -87,3 +87,6 @@ map("n", "<leader>z", "<CMD>ZenMode<CR>", { desc = "Toggle Zen mode" })
 
 -- Context view
 map("n", "<leader>cx", "<CMD>ContextToggle<CR>", { desc = "Toggle context view" })
+
+-- Compiler
+map("n", "<leader>cr", "<CMD>CompilerOpen<CR>", { desc = "Open compiler" })
