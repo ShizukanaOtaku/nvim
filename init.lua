@@ -30,6 +30,7 @@ require("notify").setup({
 })
 
 require("pywal16").setup()
+require("image").setup()
 
 require("lualine").setup {
     options = {
