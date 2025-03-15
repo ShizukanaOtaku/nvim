@@ -7,7 +7,7 @@ map("n", "j", "gj")
 map("n", "k", "gk")
 
 map("n", "<leader>e", "<CMD>Neotree<CR>", { desc = "File tree" })
-map("n", "<leader>x", vim.cmd.bd, { desc = "Close buffer" })
+map("n", "<leader>x", vim.cmd.bdelete, { desc = "Close buffer" })
 map("n", "<tab>", vim.cmd.bnext, { desc = "Next buffer" })
 map("n", "<S-tab>", vim.cmd.bprevious, { desc = "Previous buffer" })
 
