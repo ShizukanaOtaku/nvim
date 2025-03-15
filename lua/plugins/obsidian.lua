@@ -6,13 +6,13 @@ return {
     opts = {
         workspaces = {
             {
-                name = "personal",
-                path = "~/Documents/Obsidian/personal",
-            },
-            {
-                name = "work",
-                path = "~/Documents/Obsidian/work",
+                name = "main",
+                path = "~/Documents/Notes",
             },
         },
+        follow_url_func = function(url)
+            -- Open the URL in the default web browser.
+            vim.ui.open(url)
+        end,
     },
 }
