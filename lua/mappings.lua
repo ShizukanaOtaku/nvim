@@ -3,6 +3,8 @@ local wk = require("which-key")
 
 map("n", ";", ":", { desc = "Enter CMD mode" })
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear highlights" })
+map("n", "j", "gj")
+map("n", "k", "gk")
 
 map("n", "<leader>e", "<CMD>Neotree<CR>", { desc = "File tree" })
 map("n", "<leader>x", vim.cmd.bd, { desc = "Close buffer" })
