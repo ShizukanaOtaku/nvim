@@ -12,5 +12,7 @@ opt.relativenumber = true
 opt.foldexpr = 'nvim_treesitter#foldexpr()'
 opt.foldmethod = 'indent'
 opt.colorcolumn = '99'
+opt.textwidth = 99
+opt.formatoptions = 't'
 opt.undofile = true
 opt.linebreak = true
