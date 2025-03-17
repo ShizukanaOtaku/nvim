@@ -5,6 +5,7 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 require("config.lspconfig")
 require("config.cmp")
+require("config.linter")
 require("conform").setup {
     format_on_save = {
         timeout_ms = 500,
