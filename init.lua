@@ -51,3 +51,4 @@ require("telescope").setup({
 
 require("config/options")
 require("config.restore-colorscheme")
+require("startup")
